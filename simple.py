@@ -57,7 +57,7 @@ roi2_gray = cv2.cvtColor(roi2, cv2.COLOR_RGB2GRAY)
 roi2_gray = cv2.GaussianBlur (roi2_gray, (21, 21), 0)
 
 
-nivel_ajuste = 20000
+nivel_ajuste = 2000
 while True:
         ret, frame = cap.read()
 
@@ -107,13 +107,13 @@ while True:
             
                 if valor_1 > nivel_ajuste:
                     
-                    #cv2.rectangle(frame, (x_1, y_1), (w_1, h_1), (0, 255, 0), 2)
+                    cv2.rectangle(frame, (x_1, y_1), (x_1 + w_1, y_1 + h_1), (0, 255, 0), 2)
                     print('Detecatado Doca 1 com valor: ' , valor_1)
                     
                 
                 if valor_2 > nivel_ajuste:
                     
-                    #cv2.rectangle(frame, (x_2, y_2), (w_2, h_2), (0, 255, 0), 2)
+                    cv2.rectangle(frame, (x_2, y_2), (x_2 + w_2, y_2 + h_2), (0, 255, 0), 2)
                     print('Detecatado Doca 2 com valor: ' , valor_2)
 
 
